@@ -29,7 +29,7 @@ echo "[3/4] Committing changes: '$COMMIT_MSG'"
 git commit -m "$COMMIT_MSG" || { echo "No changes to commit."; exit 0; }
 
 echo "[4/4] Pushing changes to GitHub..."
-git push -u origin main
+git push -u origin master
 
 echo ""
 echo "========================================="
