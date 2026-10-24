@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Ngo | Electrical Test Engineer & Hardware Validation</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+            --chip-bg: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-bar a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-bar a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 36px;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-box {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            padding: 18px 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+            color: #e2e8f0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background-color: var(--chip-bg);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.825rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .job-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .company-name {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .job-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        ul.bullets {
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+
+        ul.bullets li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .edu-flex {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 14px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Print Override so hiring managers can print clean PDF */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                padding: 0;
+            }
+            .container { max-width: 100%; }
+            .skill-card, .job-card, .summary-box, .edu-flex {
+                background-color: #ffffff !important;
+                border: 1px solid #ccc !important;
+                color: #000000 !important;
+            }
+            h1, .job-title { color: #000000 !important; }
+            .subtitle, .company-name, h2, .skill-card h3 { color: #0284c7 !important; }
+            .tag { background-color: #f1f5f9 !important; color: #334155 !important; border: 1px solid #cbd5e1 !important; }
+            ul.bullets { color: #1e293b !important; }
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #0f172a;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #7dd3fc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+            <div>
+                <h1>Jim Ngo</h1>
+                <div class="subtitle">Electrical Test Engineer & Hardware Validation Specialist</div>
+            </div>
+            <div>
+                <a href="Resume/Electronics_Engineer_Resume.pdf" download class="download-btn">
+                    📄 Download PDF Resume
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-bar" style="margin-top: 12px;">
+            <span>Location: Ontario, CA</span>
+            <span>Phone: <a href="tel:9098302264">(909) 830-2264</a></span>
+            <span>Text: <a href="sms:9098302264">Send SMS</a></span>
+            <span>Email: <a href="mailto:jim.ngo@outlook.com">jim.ngo@outlook.com</a></span>
+            <span>LinkedIn: <a href="https://linkedin.com/in/" target="_blank">linkedin.com/in/jimngo</a></span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <div class="summary-box">
+            Electrical Engineer & Hardware Test Specialist with extensive experience in hardware validation, R&D prototyping, SMPS modeling (LTspice), and RF systems. Proven track record in prototype fabrication, PCB debugging, and electro-mechanical assembly across medical devices, defense electronics, and ruggedized industrial computing platforms.
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Competencies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Testing & Hardware</h3>
+                <div class="skill-tags">
+                    <span class="tag">Medical Surgical Consoles</span>
+                    <span class="tag">Hardware Validation</span>
+                    <span class="tag">Subsystem V&V</span>
+                    <span class="tag">ICT & Functional Testing</span>
+                    <span class="tag">Analog/Digital/Microcontrollers</span>
+                    <span class="tag">Precision SMT Soldering</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Power & RF Electronics</h3>
+                <div class="skill-tags">
+                    <span class="tag">SMPS Modeling</span>
+                    <span class="tag">Worst-Case Efficiency Analysis</span>
+                    <span class="tag">RF Up/Downconverters</span>
+                    <span class="tag">Tx/Rx Alignment</span>
+                    <span class="tag">Custom Inductors & Transformers</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Instrumentation & Tools</h3>
+                <div class="skill-tags">
+                    <span class="tag">High-Speed Oscilloscopes</span>
+                    <span class="tag">Logic Analyzers</span>
+                    <span class="tag">LTspice</span>
+                    <span class="tag">Verilog</span>
+                    <span class="tag">C / Python</span>
+                    <span class="tag">LabVIEW</span>
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">Shell Scripting</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Engineering Experience</h2>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Senior Electronic Lab Technician</span> | 
+                    <span class="company-name">Alcon</span> — Lake Forest, CA
+                </div>
+                <div class="job-date">03/2022 – 06/2022</div>
+            </div>
+            <ul class="bullets">
+                <li>Fabricated prototype instrumentation and conducted V&V testing on surgical consoles, subsystems, and PCBs using logic analyzers and high-speed oscilloscopes.</li>
+                <li>Isolated and resolved complex system-level hardware anomalies in collaboration with Senior R&D Engineers; executed precision electro-mechanical assemblies.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Engineering R&D Technician</span> | 
+                    <span class="company-name">General Micro Systems</span> — Rancho Cucamonga, CA
+                </div>
+                <div class="job-date">02/2020 – 03/2022</div>
+            </div>
+            <ul class="bullets">
+                <li>Built, tested, debugged, and validated ruggedized computing hardware, high-speed network switches, and routers for R&D and production environments.</li>
+                <li>Authored standard test procedures and step-by-step assembly guides; deployed custom Linux/Windows scripts for automated hardware validation.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Senior Electronic Technician</span> | 
+                    <span class="company-name">Micro Analog Inc.</span> — La Verne, CA
+                </div>
+                <div class="job-date">10/2019 – 02/2020</div>
+            </div>
+            <ul class="bullets">
+                <li>Executed ICT (In-Circuit Testing) and functional testing on complex analog, digital, and microcontroller boards.</li>
+                <li>Diagnosed root-cause component failures down to the schematic level and performed precision SMT rework.</li>
+            </ul>
+        </div>
+
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Electrical Engineer</span> | 
+                    <span class="company-name">Hughes Aircraft Company</span> — El Segundo, CA
+                </div>
+                <div class="job-date">12/1985 – 10/1990</div>
+            </div>
+            <ul class="bullets">
+                <li>Designed and tested Low Voltage Power Supplies (LVPS); performed worst-case efficiency and loop stability analyses.</li>
+                <li>Aligned and verified RF communication equipment and military-grade electronic assemblies.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="edu-flex">
+            <div><strong>Master of Science in Electrical Engineering (MSEE)</strong> — Loyola Marymount University</div>
+            <div>Los Angeles, CA</div>
+        </div>
+        <div class="edu-flex">
+            <div><strong>Bachelor of Science in Electrical Engineering (BSEE)</strong> — Cal Poly Pomona</div>
+            <div>Pomona, CA</div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Jim Ngo • Single-page live technical profile hosted on GitHub Pages.
+    </footer>
+</div>
+
+</body>
+</html>
